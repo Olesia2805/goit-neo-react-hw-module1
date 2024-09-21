@@ -1,13 +1,16 @@
 import FriendListItem from '../FriendListItem/FriendListItem';
-// import listCss from './FriendList.moule.css';
+import listFriendsCss from './FriendList.module.css';
 
-const FriendList = () => {
+const FriendList = ({ friends }) => {
   return (
-    <ul>
+    <ul className={listFriendsCss.listCards}>
       {/* The number of li depends on the number of objects in the array */}
-      <li>
-        <FriendListItem />
-      </li>
+
+      {friends.map(friend => (
+        <li className={listFriendsCss.listItem} key={friend.id}>
+          <FriendListItem friend={friend} />
+        </li>
+      ))}
     </ul>
   );
 };

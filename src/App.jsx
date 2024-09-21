@@ -1,4 +1,3 @@
-// import clsx from 'clsx';
 import appCss from './App.module.css';
 import userData from './userData.json';
 import friends from './friends.json';
@@ -9,7 +8,8 @@ import TransactionHistory from './components/TransactionHistory/TransactionHisto
 
 const App = () => {
   return (
-    <>
+    <div className={appCss.content}>
+      <h1 className={appCss.header}>Task 1. Social network profile</h1>
       <Profile
         name={userData.username}
         tag={userData.tag}
@@ -18,9 +18,12 @@ const App = () => {
         stats={userData.stats}
       />
 
-      {/* <FriendList friends={friends} />
-      <TransactionHistory items={transactions} /> */}
-    </>
+      <h1 className={appCss.header}>Task 2. Friends list</h1>
+      <FriendList friends={friends} />
+
+      <h1 className={appCss.header}>Task 3. Transaction history</h1>
+      <TransactionHistory items={transactions} />
+    </div>
   );
 };
 
